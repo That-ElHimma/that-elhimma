@@ -39,10 +39,10 @@ const DemoContent: Record<Locale, SiteContent> = {
     },
     navLinks: [
       { label: "Home", href: "#home", order: 0 },
-      { label: "Features", href: "#features", order: 1 },
-      { label: "Testimonials", href: "#testimonials", order: 2 },
-      { label: "Feedback", href: "#feedback", order: 3 },
-      { label: "Contact", href: "#contact", order: 4 },
+      { label: "Our Major", href: "#features", order: 1 },
+      { label: "Our Process", href: "#howwework", order: 2 },
+      { label: "Projects", href: "#previous-work", order: 3 },
+      { label: "Contact Us", href: "#contact", order: 4 },
     ],
     features: [
       {
@@ -97,31 +97,48 @@ const DemoContent: Record<Locale, SiteContent> = {
     previousWorks: [
       {
         id: 1,
-        name: "Project Alpha",
+        name: "Mudiri",
         description: "Web app for team task management.",
         imageUrl:
           "https://www.meistertask.com/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F289344%2F1521x1001%2F61554d4bfc%2Fui-image_project-management.png%3Fv%3D3&w=3840&q=75",
+        features: ["Cloud storage", "Secure system", "Simple interface"],
       },
       {
         id: 2,
-        name: "Project Beta",
+        name: "Mahfazati",
         description: "Integrated e-payment system for small businesses.",
         imageUrl:
           "https://i0.wp.com/blogrevamp.cashfree.com/wp-content/uploads/2021/09/integrated-payment-systems.png?fit=5835%2C3001&ssl=1",
+        features: [
+          "Payment gateway integration",
+          "Invoice and billing management",
+          "Fraud protection",
+        ],
       },
       {
         id: 3,
-        name: "Project Gamma",
+        name: "Rasid",
         description: "Mobile app for real-time data tracking.",
         imageUrl:
           "https://cdn.prod.website-files.com/64bf6aa2443faa46c887a8c0/64dddf954cf92e0dc844b071_time-tracker-app-for-desk-mobile-remote-teams.png",
+        features: [
+          "Real-time tracking with GPS",
+          "Instant alerts and notifications",
+          "Offline support with sync later",
+        ],
       },
       {
         id: 4,
-        name: "Project Delta",
-        description: "Dashboard for analytics and insights.",
+        name: "Data Center",
+        description:
+          "Enterprise-grade data center offering high-availability, secure, and scalable infrastructure to host critical applications and services.",
         imageUrl:
-          "https://www.figma.com/community/resource/667a5295-9efd-41a9-bff3-37cc8dff24c9/thumbnail",
+          "https://www.ki.si/fileadmin/_processed_/9/9/csm_IMG_5626q_1_88dc232e61.jpg",
+        features: [
+          "High-availability infrastructure",
+          "24/7 monitoring, security, response",
+          "Scalable infrastructure",
+        ],
       },
     ],
     footerLinks: [
@@ -155,10 +172,10 @@ const DemoContent: Record<Locale, SiteContent> = {
     },
     navLinks: [
       { label: "الرئيسية", href: "#home", order: 0 },
-      { label: "الميزات", href: "#features", order: 1 },
-      { label: "اعمالنا", href: "#previous-work", order: 2 },
-      { label: "الملاحظات", href: "#feedback", order: 3 },
-      { label: "تواصل", href: "#contact", order: 4 },
+      { label: "مجالنا", href: "#features", order: 1 },
+      { label: "كيف نعمل", href: "#howwework", order: 2 },
+      { label: "اعمالنا", href: "#previous-work", order: 3 },
+      { label: "اتصل بنا", href: "#contact", order: 4 },
     ],
     features: [
       {
@@ -209,31 +226,47 @@ const DemoContent: Record<Locale, SiteContent> = {
     previousWorks: [
       {
         id: 1,
-        name: "مشروع ألف",
+        name: "مشروع مديري",
         description: "تطبيق ويب لإدارة المهام للفرق.",
         imageUrl:
           "https://www.meistertask.com/_next/image?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F289344%2F1521x1001%2F61554d4bfc%2Fui-image_project-management.png%3Fv%3D3&w=3840&q=75",
+        features: ["تخزين سحابي", "نظام حماية", "واجهة بسيطة"],
       },
       {
         id: 2,
-        name: "مشروع باء",
+        name: "محفظتي",
         description: "نظام دفع إلكتروني متكامل للشركات الصغيرة.",
         imageUrl:
           "https://i0.wp.com/blogrevamp.cashfree.com/wp-content/uploads/2021/09/integrated-payment-systems.png?fit=5835%2C3001&ssl=1",
+        features: [
+          "تكامل بوابات الدفع",
+          "إدارة الفواتير والمستحقات",
+          "حماية ضد الاحتيال",
+        ],
       },
       {
         id: 3,
-        name: "مشروع جيم",
+        name: "راصد",
         description: "تطبيق جوال لتتبع البيانات في الوقت الفعلي.",
         imageUrl:
           "https://cdn.prod.website-files.com/64bf6aa2443faa46c887a8c0/64dddf954cf92e0dc844b071_time-tracker-app-for-desk-mobile-remote-teams.png",
+        features: [
+          "تتبع لحظي ومواقع GPS",
+          "إشعارات وتنبيهات فورية",
+          "دعم أوفلاين ومزامنة لاحقة",
+        ],
       },
       {
         id: 4,
-        name: "مشروع دلتا",
-        description: "لوحة تحكم للتحليلات والرؤى.",
+        name: "مركز البيانات",
+        description:
+          "مركز بيانات بمواصفات مؤسسية يوفر بنية تحتية عالية التوفر، اتصال آمن، وسعة قابلة للتوسع لاستضافة التطبيقات والخدمات الحساسة.",
         imageUrl:
-          "https://www.figma.com/community/resource/667a5295-9efd-41a9-bff3-37cc8dff24c9/thumbnail",
+          "https://www.ki.si/fileadmin/_processed_/9/9/csm_IMG_5626q_1_88dc232e61.jpg",
+        features: [
+          "بنية تحتية عالية التوفر (طاقة وتبريد مكرّر)",
+          "سعة قابلة للتوسع للرفوف والتخزين والشبكة",
+        ],
       },
     ],
     footerLinks: [

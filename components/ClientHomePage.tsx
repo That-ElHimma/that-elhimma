@@ -19,6 +19,11 @@ import { Button } from "./ui/button";
 import AnimatedLines from "./AnimatedLines";
 import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
+import CompanyMap from "./CompanyMap";
+import LogoLoop from "./LogoLoop/LogoLoop";
+import { ContactSimpleForm } from "./marketing/contact/contact-simple-form";
+import CardFlip from "./kokonutui/card-flip";
+import HowWeWorkSection from "./HowWeWorkSection";
 
 type Props = {
   locale: Locale;
@@ -57,12 +62,14 @@ export default function ClientHomePage({ locale, data }: Props) {
       },
     },
   };
-
   return (
     <div dir={dir} style={themeVars} className="text-foreground">
       <main>
         {/* HERO */}
-        <section id="home" className="w-full min-h-screen flex items-center justify-center relative">
+        <section
+          id="home"
+          className="w-full min-h-screen flex items-center justify-center relative"
+        >
           <AnimatedLines />
 
           <div className="max-w-[72rem] mx-auto md:py-16 lg:py-20 z-10 px-4">
@@ -117,12 +124,11 @@ export default function ClientHomePage({ locale, data }: Props) {
             </div>
           </div>
         </section>
-
         <section id="features" className="py-12 min-h-screen flex items-center">
           <div className="max-w-6xl mx-auto px-4">
             <div className="text-center max-w-2xl mx-auto mb-10">
               <h2 className="text-2xl md:text-3xl font-bold">
-                {isArabic ? "أنجز أكثر بجهد أقل" : "Do more with less"}
+                {isArabic ? "ماذا نقدم؟" : "What We Offer"}
               </h2>
               <p className="text-muted-foreground mt-3">
                 {isArabic
@@ -195,10 +201,13 @@ export default function ClientHomePage({ locale, data }: Props) {
           </div>
         </section>
 
-        {/* TESTIMONIALS */}
+        <section id="howwework" className="bg-muted/10 w-full">
+          <HowWeWorkSection locale={locale} />
+        </section>
+
         <section
           id="previous-work"
-          className="bg-muted/5 py-16 overflow-hidden"
+          className="bg-muted/5 py-18 mt-4 overflow-hidden"
         >
           <div className="max-w-6xl mx-auto px-4">
             {/* Section Header */}
@@ -211,102 +220,81 @@ export default function ClientHomePage({ locale, data }: Props) {
               </p>
             </div>
 
-            {/* Projects Grid */}
-            <div className="flex w-full flex-wrap justify-center gap-6">
-              {data.previousWorks.map((work, index) => (
+            <motion.div
+              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.15 }}
+            >
+              {data.previousWorks.map((f) => (
                 <motion.div
-                  key={work.id}
-                  initial={{ opacity: 0, y: 60 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: false, amount: 0.15 }} // <--- replay on each enter
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
-                  className="relative rounded-xl overflow-hidden shadow-lg border border-border bg-background 
-                 w-full sm:w-[330px] md:w-[400px] lg:w-[357px] 
-                 hover:shadow-2xl hover:scale-[102%] transition-transform duration-300"
+                  key={String(f.id)}
+                  variants={itemVariants}
+                  className="w-full"
                 >
-                  {/* Image */}
-                  <div className="relative w-full aspect-[16/9]">
-                    <Image
-                      src={work.imageUrl ?? "/placeholder.jpg"}
-                      alt={work.name}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-
-                  {/* Text */}
-                  <div className="px-4 py-3">
-                    <h3 className="text-lg font-semibold leading-snug">
-                      {work.name}
-                    </h3>
-                    <p className="text-muted-foreground mt-2 text-sm leading-relaxed">
-                      {work.description}
-                    </p>
+                  <div className="w-full h-full min-h-[340px] flex items-stretch">
+                    <div className="w-full flex-1 flex items-center justify-center min-h-0">
+                      <CardFlip
+                        image={f.imageUrl}
+                        title={f.name}
+                        description={f.description}
+                        subtitle={f.description}
+                        features={f.features}
+                        locale={locale}
+                      />
+                    </div>
                   </div>
                 </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
         </section>
 
-
         {/* CONTACT */}
-        <section id="contact" className="bg-muted/10 py-16">
-          <div className="max-w-4xl mx-auto px-4">
-            <div className="text-center mb-10">
-              <h2 className="text-3xl md:text-4xl font-bold leading-tight">
+        <section id="contact" className="bg-muted/10 py-18">
+          <div className="max-w-6xl mx-auto px-4">
+            {/* Header */}
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-extrabold leading-tight text-foreground">
                 {data.siteSettings.contactTitle}
               </h2>
-              <p className="text-muted-foreground mt-4">
+              <p className="mt-4 text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
                 {data.siteSettings.contactSubtitle}
               </p>
             </div>
 
-            <Card className="shadow-xl rounded-2xl">
-              <CardContent>
-                <form
-                  action="/api/contact"
-                  method="post"
-                  className="grid gap-4"
-                >
-                  <input
-                    type="text"
-                    name="website"
-                    className="hidden"
-                    tabIndex={-1}
-                    autoComplete="off"
+            {/* Card container that holds image + form */}
+            <div className="border border-border/10 rounded-xl overflow-hidden shadow-lg bg-muted/5 ring-1 ring-inset ring-border/6">
+              <div className="flex flex-col md:flex-row items-stretch">
+                {/* Image column - will stretch to match form height */}
+                <div className="relative md:w-1/2 flex-1 min-h-[280px] md:min-h-[420px] overflow-hidden">
+                  <Image
+                    src="/contact.jpg"
+                    alt="Contact Us"
+                    fill
+                    className="object-cover w-full h-full transition-transform duration-500 ease-out hover:scale-105"
                   />
-                  <Input
-                    name="name"
-                    required
-                    placeholder={isArabic ? "الاسم" : "Name"}
-                  />
-                  <Input
-                    name="email"
-                    type="email"
-                    required
-                    placeholder="name@company.com"
-                    autoComplete="email"
-                  />
-                  <Textarea
-                    name="message"
-                    required
-                    rows={5}
-                    placeholder={isArabic ? "رسالتك" : "Your Message"}
-                  />
-                  <div className="text-right">
-                    <Button
-                      type="submit"
-                      className="bg-brand-primary hover:bg-brand-primary-dark transition-colors"
-                    >
-                      {isArabic ? "إرسال" : "Send"}
-                    </Button>
-                  </div>
-                </form>
-              </CardContent>
-            </Card>
+                  {/* subtle overlay so the image plays nice with any theme */}
+                  <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/10 to-transparent dark:from-black/30" />
+                </div>
+
+                {/* Form column - will stretch to match image height */}
+                <div className="flex-1 bg-card text-card-foreground px-4 py-2 md:px-6 md:py-4 min-h-0">
+                  {/* If ContactSimpleForm sets its own margins/padding, fine — otherwise it's inside a padded card */}
+                  <ContactSimpleForm locale={locale} />
+                </div>
+              </div>
+            </div>
           </div>
         </section>
+        <CompanyMap
+          lat={33.302721}
+          lng={44.423348}
+          addressAr="ذات الهمة للوكالات التجارية و التطوير التكنولوجي العراق, بغداد, كرادة داخل"
+          addressEn="That Al-Himma Trading Agencies & Technology Development — Karrada Dakhel, Baghdad, Iraq"
+          locale={locale}
+        />
       </main>
     </div>
   );

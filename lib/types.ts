@@ -22,6 +22,7 @@ export type PreviousWork = {
   name: string;
   description: string;
   imageUrl?: string;
+  features?: string[];
 };
 
 export type Feedback = {

@@ -88,13 +88,13 @@ export default function Header({
 
   return (
     <header className="sticky top-0 z-30 bg-background border-b">
-      <div className="max-w-[72rem] mx-auto px-4 py-6 flex items-center justify-between gap-4">
+      <div className="max-w-[72rem] mx-auto px-4 py-2 md:py-6 flex items-center justify-between gap-4">
         <Link href="/" className="flex items-center gap-3">
           <Image
             src={data.siteSettings.logoPath || "/images/path55-9.png"}
             alt="logo"
-            width={60}
-            height={60}
+            width={45}
+            height={45}
             priority
           />
           <span className="font-semibold text-lg capitalize">{data.siteSettings.companyName}</span>
@@ -114,7 +114,7 @@ export default function Header({
                 onClick={(e) => handleNavClick(e, String(href))}
                 aria-current={isActive ? "page" : undefined}
                 className={
-                  "relative text-[1rem] font-semibold transition-all px-3.5 py-1 rounded-full " +
+                  "relative text-[0.8rem] font-semibold transition-all px-3.5 py-1 rounded-full " +
                   (isActive
                     ? "font-medium text-foreground bg-[color:var(--brand-accent)]/12 ring-1 ring-[color:var(--brand-accent)]/20 shadow-sm"
                     : "text-muted-foreground hover:text-foreground hover:bg-muted/30")

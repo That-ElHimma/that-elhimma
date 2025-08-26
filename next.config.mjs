@@ -4,7 +4,7 @@ const nextConfig = {
   typescript: { ignoreBuildErrors: true },
   images: {
     unoptimized: true,
-    domains: ["meistertask.com", "cdn.prod.website-files.com", "i0.wp.com", "www.figma.com"], // add your hosts here
+    domains: ["meistertask.com", "cdn.prod.website-files.com", "i0.wp.com", "www.figma.com", "maps.app.goo.gl", "api.maptiler.com","www.ki.si"], // add your hosts here
   },
   images: { unoptimized: true },
   async headers() {
