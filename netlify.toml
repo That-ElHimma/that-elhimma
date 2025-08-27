@@ -1,0 +1,6 @@
+[build]
+  command = "npm run build"
+  publish = "public" # plugin will handle routing – publish can be left default
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
