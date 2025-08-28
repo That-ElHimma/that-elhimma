@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://thatelhimma.com/#home</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thatelhimma.com/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://thatelhimma.com/ar"/>
+  </url>
+
+  <!-- Services -->
+  <url>
+    <loc>https://thatelhimma.com/#features</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thatelhimma.com/#features"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://thatelhimma.com/ar/#features"/>
+  </url>
+
+  <!-- About -->
+  <url>
+    <loc>https://thatelhimma.com/#howwework</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thatelhimma.com/#howwework"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://thatelhimma.com/ar/#howwework"/>
+  </url>
+
+  <!-- Contact -->
+  <url>
+    <loc>https://thatelhimma.com/#contact</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thatelhimma.com/#contact"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://thatelhimma.com/ar/#contact"/>
+  </url>
+
+  <!-- Blog/News -->
+  <url>
+    <loc>https://thatelhimma.com/#previous-work</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://thatelhimma.com/#previous-work"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://thatelhimma.com/ar/#previous-work"/>
+  </url>
+
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://thatelhimma.com/policy</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Terms of Service -->
+  <url>
+    <loc>https://thatelhimma.com/terms</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>

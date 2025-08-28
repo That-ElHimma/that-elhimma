@@ -1,10 +1,31 @@
 import Link from "next/link"
 import { cookies } from "next/headers"
 import { redirect } from "next/navigation"
+import type { Metadata } from "next"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+
+export const metadata: Metadata = {
+  title: "Sign In",
+  description: "Sign in to your That El-Himma account to access your dashboard and manage your business solutions.",
+  keywords: ["login", "sign in", "authentication", "dashboard", "account"],
+  robots: {
+    index: false,
+    follow: false,
+  },
+  openGraph: {
+    title: "Sign In - That El-Himma",
+    description: "Sign in to your That El-Himma account to access your dashboard and manage your business solutions.",
+    url: "https://thatelhimma.com/login",
+    siteName: "That El-Himma",
+    type: "website",
+  },
+  alternates: {
+    canonical: "/login",
+  },
+};
 
 export default async function LoginPage({ searchParams }: { searchParams: { error?: string } }) {
   // If already authenticated, go to dashboard
