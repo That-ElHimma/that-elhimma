@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 
 interface PerformanceMonitorProps {
   pageName: string;
+  
 }
 
 export default function PerformanceMonitor({ pageName }: PerformanceMonitorProps) {
