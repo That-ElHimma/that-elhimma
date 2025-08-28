@@ -16,6 +16,7 @@ type FooterProps = {
   email?: string;
   address?: string;
   socials?: Social[];
+  data?: any;
 };
 
 export default function Footer({
