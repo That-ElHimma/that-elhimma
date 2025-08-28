@@ -74,7 +74,7 @@ export const metadata: Metadata = {
   // <-- Verification codes: replace the strings below with the codes given to you
   verification: {
     // Google Search Console meta: <meta name="google-site-verification" content="..." />
-    google: 'PASTE_YOUR_GOOGLE_VERIFICATION_CODE_HERE',
+    google: 'F3z4b_VtvEGSA1lRRkMpWKeM36IOhIee60TppZ7cvXw',
 
     // Yandex.Webmaster meta: <meta name="yandex-verification" content="..." />
     yandex: 'PASTE_YOUR_YANDEX_VERIFICATION_CODE_HERE',
