@@ -97,7 +97,7 @@ export default function Footer({
                 </div>
                 <div className={`text-sm ${isArabic ? "text-right" : "text-left"}`}>
                   <div className="text-xs text-muted-foreground/80">{t.contactUs}</div>
-                  <a href={`tel:${phone}`} className="mt-1 block font-semibold text-primary">
+                  <a dir={"ltr"} href={`tel:${phone}`} className="mt-1 block font-semibold text-primary">
                     {phone}
                   </a>
                 </div>

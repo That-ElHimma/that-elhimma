@@ -143,7 +143,7 @@ export default function ClientHomePage({ locale, data }: Props) {
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false, amount: 0.15 }}
+              viewport={{ once: true }}
             >
               {data.features.map((f: Feature) => {
                 const Icon =
@@ -225,7 +225,7 @@ export default function ClientHomePage({ locale, data }: Props) {
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false, amount: 0.15 }}
+              viewport={{ once: true }}
             >
               {data.previousWorks.map((f) => (
                 <motion.div
